@@ -369,7 +369,7 @@ namespace BeetleX
                     Buffers.Buffer.Free(buffer);
                 }
                 if (Server.EnableLog(EventArgs.LogType.Error))
-                    Server.Log(EventArgs.LogType.Error, this, $"{RemoteEndPoint} session send queue overflow!");
+                    Server.Log(EventArgs.LogType.Error, this, $"{RemoteEndPoint} session send queue overflow! queue count:{Count},max limit:{MaxWaitMessages}.");
                 Dispose();
                 return false;
             }
